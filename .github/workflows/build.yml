@@ -1,7 +1,8 @@
 ---
-name: Build Container
+name: Container Build
 on:
   push:
+    - main
 
 jobs:
   build:
