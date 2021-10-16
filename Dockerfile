@@ -4,4 +4,7 @@ WORKDIR /opt/app
 
 COPY . .
 
-CMD ["python", "main.py"]
+RUN pip install -r requirements.txt
+
+EXPOSE 5000
+CMD ["flask", "run"]
