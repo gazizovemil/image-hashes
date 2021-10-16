@@ -3,9 +3,6 @@ name: Container Build for Tag
 on:
   push:
     tags: '*'
-
-    i github.ref
-
 jobs:
   build:
     runs-on: ubuntu-latest
