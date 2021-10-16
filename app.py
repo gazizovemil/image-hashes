@@ -1,7 +1,6 @@
 import hashlib
 
-from flask import Flask
-from flask import request
+from flask import Flask, request
 
 app = Flask(__name__)
 
@@ -10,7 +9,8 @@ app = Flask(__name__)
 def upCheck():
     return {"message": "up"}
 
-@app.route("/image", methods=["POST"] )
+
+@app.route("/image", methods=["POST"])
 def image():
     data = request.get_data()
     hashObjs = {
