@@ -33,6 +33,8 @@ def image():
         "color_hash": imagehash.colorhash(img).__str__(),
         "phash": imagehash.phash(img).__str__(),
         "dhash": imagehash.dhash(img).__str__(),
+        "whash": imagehash.whash(img).__str__(),
+        "crop_hash": imagehash.crop_resistant_hash(img).__str__(),
     }
 
 
