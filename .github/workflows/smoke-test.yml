@@ -1,5 +1,5 @@
 ---
-name: Smoke
+name: No Smoke
 on:
   push:
   pull_request:
