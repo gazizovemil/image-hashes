@@ -1,5 +1,5 @@
 # image-hashes
-A simple micro-service API to spit out various hashes for a given image to help detect duplicates or modifications  
+A simple microservice API to spit out various hashes for a given image to help detect duplicates or modifications  
 
 
 [ImageHash lib](https://pypi.org/project/ImageHash/)
