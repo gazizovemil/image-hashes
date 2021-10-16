@@ -1,7 +1,7 @@
 import hashlib
 import io
-import imagehash
 
+import imagehash
 from flask import Flask, request
 from PIL import Image
 
@@ -34,3 +34,7 @@ def image():
         "phash": imagehash.phash(img).__str__(),
         "dhash": imagehash.dhash(img).__str__(),
     }
+
+
+if __name__ == "__main__":
+    app.run(debug=True, host="0.0.0.0", port=5000)
