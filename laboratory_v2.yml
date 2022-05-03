@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: laboratory
+  name: laboratory
+  namespace: laboratory
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: laboratory
+  template:
+    metadata:
+      labels:
+        app: laboratory
+    spec:
+      containers:
+      - name: laboratory
+        image: gazizovemil/laboratory:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: laboratory
+  name: laboratory-svc
+  namespace: laboratory
+spec:
+  ports:
+  - port: 5000
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app: laboratory
+  type: LoadBalancer
