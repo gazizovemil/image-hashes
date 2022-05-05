@@ -6,7 +6,7 @@ metadata:
   name: laboratory
   namespace: laboratory
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: laboratory
@@ -33,4 +33,23 @@ spec:
     targetPort: 5000
   selector:
     app: laboratory
-  type: LoadBalancer
+  sessionAffinity: None
+  type: ClusterIP
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: laboratory-ingress
+  namespace: laboratory
+spec:
+  rules:
+  - host:
+    http:
+      paths:
+      - backend:
+          service:
+            name: laboratory-svc
+            port:
+              number: 5000
+        path: /up
+        pathType: ImplementationSpecific
